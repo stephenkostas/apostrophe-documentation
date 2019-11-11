@@ -56,7 +56,7 @@ redirects:
   tutorials/howtos/docker :  ./tutorials/devops/docker.md
   tutorials/howtos/replica-set : ./tutorials/advanced-development/database/replica-set.md
   tutorials/howtos/storing-sessions-in-redis : ./tutorials/devops/storing-sessions-in-redis.md
-  tutorials/x : ./tutorials/devops/storing-sessions-in-redis.md
+  tutorials/test-link : ./tutorials/devops/storing-sessions-in-redis.md
 
   
   tutorials/howtos/trim-index : ./tutorials/advanced-development/advanced-pieces-topics/next-previous-links.md
