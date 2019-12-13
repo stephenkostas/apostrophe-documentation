@@ -58,6 +58,14 @@ Two blocks to take note of are `title` and `main`. You can extend the `title` bl
 
 As a rule, you should extend the `layout.html` or create your own templates using a similar pattern in `views/` to extend, rather than creating all of your templates.
 
+## Configuring Apostrophe with `app.js` 
+
+`app.js` is Apostrophe's main configuration file. This is the file that fires up Apostrophe with a given configuration, and is where you can specify what modules you want to be present in your project. As you add them, you also configure them by providing options via an object.
+
+Some modules are always a part of Apostrophe whether you configure them or not, and you can create your own modules to meet the needs of your project. To learn more abuou modules, visit the [Modules section](/tutorials/core-concepts/modules/README.md).
+
+In order for any new page template to load, you must add it to `app.js`. When you add a new page template to `app.js`, remember, you're not creating a new page: you're registering a page template that can be used to create new pages.
+
 ### Example: Creating a New Page Template 
 
 To create a page template:
@@ -83,15 +91,6 @@ Now that you have a `default.html` file, you need to register it in `app.js` to 
 {% hint style='info' %}
 Even `layout.html` extends another file. For a typical page load, it extends `outerLayout.html`, which lives in the `lib/modules/apostrophe-templates/views` folder. That file extends the `outerLayoutBase.html` file that ships with Apostrophe. Most of the time you won't need to look there, but it does contain additional blocks you can override, notably `extraHead` which is perfect for adding `link` elements to the `head` element and so on.
 {% endhint %}
-
-## Configuring Apostrophe with `app.js` 
-
-`app.js` is Apostrophe's main configuration file. This is the file that fires up Apostrophe with a given configuration, and is where you can specify what modules you want to be present in your project. As you add them, you also configure them by providing options via an object.
-
-Some modules are always a part of Apostrophe whether you configure them or not, and you can create your own modules to meet the needs of your project. To learn more abuou modules, visit the [Modules section](/tutorials/core-concepts/modules/README.md).
-
-In order for any new page template to load, you must add it to `app.js`. When you add a new page template to `app.js`, remember, you're not creating a new page: you're registering a page template that can be used to create new pages.
-
  
 ### Example: Adding a Page Template to `app.js`
 

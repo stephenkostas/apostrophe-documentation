@@ -7,9 +7,9 @@ layout: tutorial
 
 Central to Apostrophe is the philosophy that editors can edit their content in context. In order for you to enable this functionality in your templates, Apostrophe provides `singleton` and `area` helpers. Within those singletons and areas, the objects that you add to a page are called `widgets`.
 
-## Singletons
-
 A Singleton is a space on a page that allows an editor to add a single "widget" of a specific type.
+
+An Area, is like a Singleton, a space on the page where an editor can add a widget. Unlike a Singleton, you can add any number of widgets inside of an area, and you can define multiple types of widgets that can be added within a single area. When we use the area helper a "+" sign appears on the page, allowing the user to add a new widget in a series \(usually a vertical column\), often alternating between images and rich text.
 
 ### Example: Creating a Rich Text Editor as a Singleton
 
@@ -54,10 +54,6 @@ An "options" object that allows us to pass type-specific options to the widget. 
 If we restart our server and refresh our site's home page while logged in, we'll see a gray block with a button prompting us to add rich text. Once you start adding text, your edits save automatically. **There is no "save" button because you don't need one.** All edits are saved in the background.
 
 ![](/.gitbook/assets/boilerplate_singleton.png)
-
-## Areas
-
-An Area, is like a Singleton, a space on the page where an editor can add a widget. Unlike a Singleton, you can add any number of widgets inside of an area, and you can define multiple types of widgets that can be added within a single area. When we use the area helper a "+" sign appears on the page, allowing the user to add a new widget in a series \(usually a vertical column\), often alternating between images and rich text.
 
 ### Example: Creating an Area with Multiple Widgets
 

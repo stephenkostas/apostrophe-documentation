@@ -8,7 +8,6 @@
 
 ## Tutorials
 * [Core Concepts](tutorials/core-concepts/README.md)
-  * [Technical overview: 30,000 feet](tutorials/core-concepts/technical-overview.md)
   * [Pages & Navigation](tutorials/core-concepts/pages-and-navigation/README.md)
     * [Page Templates](tutorials/core-concepts/pages-and-navigation/page-templates.md)
     * [Widgets, Singletons, and Areas](tutorials/core-concepts/pages-and-navigation/widgets-singletons-and-areas.md)
@@ -73,7 +72,6 @@
     * [Using MongoDB replica sets with Apostrophe](tutorials/advanced-development/database/replica-set.md)
   * [Schema Guide](tutorials/schema-guide/schema-guide.md)
 ---
->>>>>>> 9f3ea3a20709bb42134ca100e853031178b50c64
 * [Apostrophe DevOps](tutorials/devops/README.md)
   * [Hosting Apostrophe in production](tutorials/devops/deployment/README.md)  
     * [Hosting Apostrophe in production](tutorials/devops/deployment/deployment.md)  
@@ -104,7 +102,7 @@
 * [How do I Redirect a User on Login?](tutorials/howtos/user-redirect.md)
 
 ## Reference
-
+* [Technical overview: 30,000 feet](tutorials/technical-overview.md)
 * [Glossary](other/glossary.md)
 * [Schema Field Types](other/schema-reference.md)
   * [area](other/field-types/area.md)

@@ -23,9 +23,11 @@ There are real advantages to doing it this way. If the site has a `prefix` optio
 
 **"Why** `_url`**?"** The URL isn't a permanent part of the page object that lives in the database. Anything that is dynamically set and not part of the database starts with `_`, so it doesn't get accidentally stored back to mongodb.
 
-## Linking to the subpages of the home page \("tab" navigation\)
+## Example: "Tab" Navigation
 
-A common navigation design is to have a row of "tabs" at the top. Want to display those no matter where in the site you are? Add this to your `home.html`:
+A common navigation design is to have a row of "tabs" at the top. In this example, you'll link to the subpages of the home page to create your tabs.
+
+First, add this to your `home.html`:
 
 {% code-tabs %}
 {% code-tabs-item title="lib/modules/apostrophe-pages/views/home.html" %}
@@ -59,7 +61,7 @@ Now let's add a CSS class indicating the current tab \(the one that is the curre
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-## Dropdown menus
+## Example: Dropdown menus
 
 Sometimes you'll want to display dropdown menus. Each menu represents a child of the home page, and each item on each menu represents a child of _that_ page.
 
@@ -114,7 +116,7 @@ Now you can easily output all the markup you'd need for dropdown menus. Add this
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-## Breadcrumb trails
+## Example: Breadcrumb trails
 
 The current page is `data.page`, and by default, `data.page._ancestors` is available. This will add a breadcrumb link to the page:
 
@@ -136,9 +138,9 @@ The current page is `data.page`, and by default, `data.page._ancestors` is avail
 **Always check whether** `data.page` **exists** when using it in a layout template that might also be extended by `login.html`, `notFound.html` and other places where there is no CMS "page."
 {% endhint %}
 
-## "Accordion" navigation
+## Example: "Accordion" navigation
 
-Want to list the ancestors of the current page along with their subpages? Sure. You can replace your current navigation with this "accordion" nav:
+Want to list the ancestors of the current page along with their subpages? Sure. You can replace the previous example with this "accordion" nav:
 
 {% code-tabs %}
 {% code-tabs-item title="lib/modules/apostrophe-pages/views/home.html" %}
@@ -162,9 +164,9 @@ Want to list the ancestors of the current page along with their subpages? Sure. 
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-## Children of the current page
+## Example: Display Children of the current page
 
-That's another easy one:
+To display children of the current page in the navigation, use a block like this:
 
 {% code-tabs %}
 {% code-tabs-item title="lib/modules/apostrophe-pages/views/home.html" %}
