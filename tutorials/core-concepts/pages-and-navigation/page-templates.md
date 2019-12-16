@@ -66,9 +66,13 @@ Some modules are always a part of Apostrophe whether you configure them or not, 
 
 In order for any new page template to load, you must add it to `app.js`. When you add a new page template to `app.js`, remember, you're not creating a new page: you're registering a page template that can be used to create new pages.
 
-### Example: Creating a New Page Template 
+## Example: Creating a New Page Template 
 
-To create a page template:
+Now let's apply all of this to create a new page template in `default.html`.
+
+### Create the Template
+
+First create the page template:
 
 1. Create new HTML file in `lib/modules/apostrophe-pages/views/pages/` named `default.html`.
 
@@ -92,7 +96,7 @@ Now that you have a `default.html` file, you need to register it in `app.js` to 
 Even `layout.html` extends another file. For a typical page load, it extends `outerLayout.html`, which lives in the `lib/modules/apostrophe-templates/views` folder. That file extends the `outerLayoutBase.html` file that ships with Apostrophe. Most of the time you won't need to look there, but it does contain additional blocks you can override, notably `extraHead` which is perfect for adding `link` elements to the `head` element and so on.
 {% endhint %}
  
-### Example: Adding a Page Template to `app.js`
+### Add the Page Template to `app.js`
 
 1. Open `app.js` in your favorite text editor.
 
@@ -122,7 +126,7 @@ Even `layout.html` extends another file. For a typical page load, it extends `ou
 
 Remember, all you're doing here is registering a template. New pages are created in context on your Apostrophe instance.
 
-### Example: Create a Page from the New Template
+### Create a Page from the New Template
 
 Now that you created the template, use it to create a new page.
 

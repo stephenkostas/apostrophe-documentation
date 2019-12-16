@@ -1,5 +1,5 @@
 ---
-title: Custom widgets
+title: Custom Widgets Part 1 Creating a Basic Widget
 layout: tutorial
 ---
 

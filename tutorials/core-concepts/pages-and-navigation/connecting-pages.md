@@ -184,5 +184,5 @@ To display children of the current page in the navigation, use a block like this
 
 ## Custom navigation
 
-For further navigation examples, you can see the [Custom Widgets](/tutorials/core-concepts/editable-content-on-pages/custom-widgets.md) article, or continue reading to learn more about Widgets in general first.
+This style navigation is hardcoded into your template, and you would need to be manually recreate (or copypasta) the navigation into any new templates where you want to use it. This might sound bad, but don't worry, we can take the same templating principles that we learned here and use them to create a custom navigation widget.
 
