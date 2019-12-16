@@ -27,38 +27,61 @@ Areas and singletons both accept useful options for managing their controls. Som
 
 ## Example: Rich Text Widget Singleton with Label
 
-To add a Rich Text widget as a single in your template, add this to the main content block:
+Here is an example Rich Text widget singleton configured to provide bold and italic options on a toolbar. The `add` button will have a label that says "Add a description."
+
 
 ```markup
         {{ apos.singleton(data.page, 'textBlock', 'apostrophe-rich-text', {
-          toolbar: [ 'Bold', 'Italic' ]
+          toolbar: [ 'Bold', 'Italic' ],
+          addLabel: 'Add a description.'
         }) }}
     ```
 
-In this case, you're providing the Rich Text widget configured to provide bold and italic options on a toolbar.
 
 ## Example: Rich Text and Images Widget Area with Repositioned Controls
 
+Here is an example area with two widgets:
 
+* The Images Widget
+  
+  * Can only be added once.
 
+  * Specifies that the image added must be 1200x600 or larger
 
+  * The "edit" button has the label "Change the Logo"
 
-Here's a complete example:
+  * The controls cannot be moved or removed, and are positioned in the bottom right
+
+* The Rich Text Widget
+
+  * Has a toolbar with the styles, bold, italic, link, and unlink options
+
+  * Provides Heading, Subheading, and Paragraph styles 
+
 
 ```markup
-{{ apos.singleton(data.page, 'logo', 'apostrophe-images', {
-  limit: 1,
-  minSize: [ 1200, 600 ],
-  addLabel: 'Set the logo',
-  editLabel: 'Change the logo',
-  controls: {
-    movable: false,
-    removable: false,
-    position: 'bottom-right'
-  }
-}) }}
+{{ apos.area(data.page, 'body', {
+      widgets: {
+        'apostrophe-images': {
+          limit: 1,
+          minSize: [ 1200, 600 ],
+          
+          editLabel: 'Change the logo',
+          controls: {
+            movable: false,
+            removable: false,
+            position: 'bottom-right'
+        }
+        'apostrophe-rich-text': {
+          toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink' ],
+          styles: [
+            { name: 'Heading', element: 'h3' },
+            { name: 'Subheading', element: 'h4' },
+            { name: 'Paragraph', element: 'p' }
+          ]
+        }
+}}
 ```
-
 
 ## More Widgets
 
