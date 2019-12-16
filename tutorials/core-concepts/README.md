@@ -38,11 +38,11 @@ Apostrophe provides all the tools you need to build beautiful, dynamic content f
 
 ### Pages, Widgets, and Pieces
 
-[Content starts with a **page**](pages-and-navigation/README.md). A page in and will likely only contain elements like a title, navigation, and a footer which together serve as the basis for displaying other types of content.
+[Content starts with a **page**](pages-and-navigation/README.md). A page itself will likely only contain elements like a title, navigation, and a footer which together serve as the framework for displaying other types of content.
 
-[Next, you add **widgets** on that page](editable-content-on-pages/README.md). A widget is a piece of content or functionality added to a page. It might be a text area that a writer can use to write a blog on that page, or a carousel style display for images of artwork. Widgets can be configured as **singletons**, where a single widget is displayed, or in **areas** where multiple widgets of different types can be added and arranged on a page.
+[Next, you add **widgets** on that page](editable-content-on-pages/README.md). A widget is a piece of content or functionality on a page. It might be a text area that a writer can use to write a blog on that page, or a carousel style display for images of artwork. Widgets can be configured as **singletons**, where a single widget is displayed, or in **areas** where multiple widgets of different types can be added and arranged on a page.
 
-[**Pieces** are what bring it all together](reusable-content-pieces/README.md). They are Apostrophe's primary tool for user's to create content. Using pieces a developer can define a myriad of content types and relationships between content types that writers and editors can use to build structured content.
+[**Pieces** are what bring it all together](reusable-content-pieces/README.md). Pieces enable developers to define custom content types to represent virtually anything. Using pieces a developer can define a myriad of content types and relationships between content types that writers and editors can use to build structured content.
 
 In addition to these core concepts, you'll also work with tools like [**tags** and **attachments**](other-content.md) to build a robust site.
 
