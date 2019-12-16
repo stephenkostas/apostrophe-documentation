@@ -5,15 +5,7 @@ layout: tutorial
 
 # Displaying Widgets
 
-In order to display widgets, you first must define them in templates. A widget can be defined as a *singleton* which is a single widget displayed on a page, or the widget can be defined in an *area* where one or more widgets can be added to a page in an assigned space. A widget can be added to a page multiple times with different configurations, using different combinations of singletons and areas.
-
-## Singleton
-
-A singleton will display the selected widget on the page with the options you configured in the template.
-
-## Area
-
-An area can display any number of widgets, and it can display multiples of each time of widget assigned to the area. When you configure widgets to display in an area, and view it on a page, nothing will appear at first. A logged in editor or administrator will see a "+" button which opens a selection for adding any widgets that are configured for that area.
+In order to display widgets, you first must define them in templates. [Remember from the previous chapter](../pages-and-navigation/widgets-singletons-and-areas.md) that widgets can be displayed as **singletons** or in **areas**. A singleton displays a single widget, while an area can display multiple widgets of different types.
 
 ## Singleton and Area Controls
 
