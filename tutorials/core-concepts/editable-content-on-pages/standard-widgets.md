@@ -32,7 +32,7 @@ Here is an example Rich Text widget singleton configured to provide bold and ita
 
 ## Example: Rich Text and Images Widget Area with Repositioned Controls
 
-Here is an example area with two widgets:
+Here is an example area with two widgets. In this configuration:
 
 * The Images Widget
   

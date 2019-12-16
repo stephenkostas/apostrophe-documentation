@@ -37,24 +37,6 @@ If you're following along, you created a `default.html` template in the previous
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Let's deconstruct the arguments we are passing here.
-
-#### `data.page`
-
-The page object you want to save the singleton to. In this case, we are editing content on the current page, so the content should be saved to that page.
-
-#### `'textBlock'`
-
-The name of the area. This denotes what property the singleton will be saved to in the page object. In this case, it would be saved to `data.page['textBlock']`.
-
-#### `'apostrophe-rich-text'`
-
-The widget type we want to allow in the singleton. In this case, we are using the standard rich text widget.
-
-#### `{ toolbar: [ 'Bold', 'Italic' ] }`
-
-An "options" object that allows us to pass type-specific options to the widget. Rich text widgets support a `toolbar` option.
-
 If we restart our server and refresh our site's home page while logged in, we'll see a gray block with a button prompting us to add rich text. Once you start adding text, your edits save automatically. **There is no "save" button because you don't need one.** All edits are saved in the background.
 
 ![](/.gitbook/assets/boilerplate_singleton.png)
