@@ -12,7 +12,7 @@ When you first start Apostrophe, you have have one page, "Home", and one templat
 
 Let's create three pages to demonstrate Apostrophe's page tree.
 
-1. Make sure you're logged on to Apostrophe.
+1. Make sure you're logged in to Apostrophe.
 
 2. Open the admin bar and select *Pages*.
 
@@ -28,7 +28,7 @@ You are now looking at the **Reorganize Pages** interface. You can use this page
 
 4. Click *Save*.
 
-You'll immediate be taken to the new page, but we're not ready to start editing pages yet.
+You'll be taken to the new page immediately, but we're not ready to start editing pages yet.
 
 1. Go back to Admin &rarr; *Pages*.
 
@@ -50,7 +50,7 @@ You can create as many pages as you need with any level of hierarchy using these
 
 ## Connecting Pages
 
-If you've been poking around (or following these tutorials) you may have noticed that, out of the box, Apostrophe does not provide an easy way to navigate between pages. Instead we provide the tools for you to build yourself the navigation of your dreams. To build your navigation, you'll create dynamic links in your templates using the concept that all pages are connected by being children of the home page.
+Now that you have several pages created, you need to create a navigation to connect them all. The key concept that you'll use to build that navigation and create dynamic links between pages that don't break, is that, like the worlds of Viking mythology, all pages connect back to the home page.
 
 ## Example: Linking to the home page
 
@@ -233,5 +233,5 @@ To display children of the current page in the navigation, use a block like this
 
 ## Custom navigation
 
-This style navigation is hardcoded into your template, and you would need to be manually recreate (or copypasta) the navigation for any new templates you create. This might sound bad, but don't worry, we can take the same templating principles that we learned here and use them to create a [custom navigation widget](../editable-content-on-pages/README.md).
+This style navigation is hardcoded into your template, and you would need to manually recreate (or copypasta) the navigation for any new templates you create. This might sound bad, but don't worry, we can take the same templating principles that we learned here and use them to create a [custom navigation widget](../editable-content-on-pages/README.md).
 
