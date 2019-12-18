@@ -5,15 +5,13 @@ layout: tutorial
 
 # Widgets, Singletons, and Areas
 
-Central to Apostrophe is the philosophy that editors can edit their content in context. In order for you to enable this functionality in your templates, Apostrophe provides `singleton` and `area` helpers. A widget can be defined as a *singleton* which is a single widget displayed on a page, or the widget can be defined in an *area* where one or more widgets can be added to a page in an assigned space. A widget can be added to a page multiple times with different configurations, using different combinations of singletons and areas.
+Central to Apostrophe is the philosophy that editors can edit their content in context. In Apostrophe, we do this with **widgets**. A widget is a content block that you add to a page. You can add widgets to your template using **singletons** or **areas**. 
 
-## Singleton
+**Singleton**
+: A singleton displays a single widget. The widget and its options are defined in the page template.
 
-A singleton will display the selected widget on the page with the options you configured in the template.
-
-## Area
-
-An area can display any number of widgets, and it can display multiples of each time of widget assigned to the area. When you configure widgets to display in an area, and view it on a page, nothing will appear at first. A logged in editor or administrator will see a "+" button which opens a selection for adding any widgets that are configured for that area.
+**Area**
+: An area can display any number of widgets, and it can display multiples of each type of widget assigned to the area. When you configure widgets to display in an area, and view it on a page, nothing will appear at first. When logged in as an editor or administrator you will see a plus ("+") button which opens a menu for adding any widgets that are configured for that area.
 
 ### Example: Creating a Rich Text Editor as a Singleton
 

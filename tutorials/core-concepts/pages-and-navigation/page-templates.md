@@ -1,11 +1,11 @@
 ---
-title: Page Templates
+title: Creating Pages
 layout: tutorial
 ---
 
-# Page Templates
+# Creating Pages
 
-The first thing you need to do is create a page. You can create the most amazing content in history, but if it doesn't have a page to be displayed on, then no one will ever know.
+You can create the most amazing content in history, but if it doesn't have a page to be displayed on, then no one will ever know. So before we create any content, let's create the pages and necessary site structure.
 
 There are three main steps for creating a new page:
 
@@ -15,15 +15,28 @@ There are three main steps for creating a new page:
 
 3. Add the page through the ApostropheCMS user interface.
 
-To create new pages and page templates, you'll use the `apostrophe-pages` and `apostrophe-templates` modules. You'll also learn the basics of editing page templates in [Nunjucks](https://mozilla.github.io/nunjucks/), and a little bit about modules in Apostrophe.
+To create new pages and page templates, you'll use the `apostrophe-pages` and `apostrophe-templates` modules. You'll also learn the basics of using [Nunjucks](https://mozilla.github.io/nunjucks/) to provide more dynamic features.
 
-## Creating Page Templates
+## Page Creation Overview
 
-First you want to create you template. A page template in Apostrophe is stored in an `.html` file, and is composed of HTML and JavaScript with additional features added through the Nunjucks templating language. The primary location for page templates is `lib/modules/apostrophe-pages/views/`.
+Before we go through an example where you create your own page templates and pages, let's look in more detail at the concepts behind each step of the process.
 
-If you have an existing Apostrophe project, take a look at the `apostrophe-pages` module directory of the project \(`lib/modules/apostrophe-pages`\). Here you'll find a `/views` directory containing our `.html` template files. Within the `/pages` subdirectory by default, you'll just find the Home page template, `home.html`.
+### Step 1: Creating Page Templates
 
-In addition to the `home.html` template in `lib/modules/apostrophe-pages`, projects created with our CLI from the `apostrophe-boilerplate` project ship with a simple `layout.html` file in the top-level `views/` folder. Templates  that are not from a specific module are found in `views/`. If you peek inside `layout.html`, you'll find several examples of "blocks":
+First, create the template. A page template in Apostrophe is composed of HTML and JavaScript extended with Nunjucks.
+
+Templates are found here: 
+
+DIRECTORY STRUCTURE DIAGRAM
+`lib/modules/apostrophe-pages/views/`.
+
+`apostrophe-pages` module directory of the project \(`lib/modules/apostrophe-pages`\). Here you'll find a `/views` directory containing our `.html` template files. Within the `/pages` subdirectory by default, you'll just find the Home page template, `home.html`.
+
+In addition to the `home.html` template in `lib/modules/apostrophe-pages`, projects created with our CLI from the `apostrophe-boilerplate` project ship with a simple `layout.html` file in the top-level `views/` folder. Templates  that are not from a specific module are found in `views/`.
+
+END DIRECTORY STRUCTURE DIAGRAM
+
+The `layout.html` template provides the unpinning for all of our templates. Before you create a new template, open `layout.html`:
 
 {% code-tabs %}
 {% code-tabs-item title="views/layout.html" %}
@@ -52,23 +65,25 @@ In addition to the `home.html` template in `lib/modules/apostrophe-pages`, proje
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Blocks are a great Nunjucks feature; they are defined in files, and when you extend that file, you can override them in your page template by using the `block`keyword. So using these blocks on your pages means everything output by your page template will be inserted into the layout in the appropriate spot.
+As a rule, you should extend the `layout.html` or create your own base templates using a similar pattern. For our example, we'll start with the `blocks` defined in `layout.html` and override them in a separate templates.
 
-Two blocks to take note of are `title` and `main`. You can extend the `title` blockto set the page title, although the default `layout.html` makes a good guess based on the current piece or page. The `main` block is where the content of your page will go.
+{% hint style='info' %}
+While `layout.html` is the template that you'll extend, there's a long line of templates being extended under the hood. For a typical page load, `layout.html` extends `outerLayout.html` (from `lib/modules/apostrophe-templates/views`). Then `outLayout.html` extends `outerLayoutBase.html`. Most of the time you won't need to look there, but there are cases, like adding a `link` to the `head`, where you might need to override a block from one of the base templates that isn't found in `layout.html`.
+{% endhint %}
 
-As a rule, you should extend the `layout.html` or create your own templates using a similar pattern in `views/` to extend, rather than creating all of your templates.
+Two blocks to take note of are `title` and `main`. You extend the `title` block to set the page title, and put page content in the `main` block. If you don't set a title, Nunjucks will set a page title based on the content of your page.
 
-## Configuring Apostrophe with `app.js` 
+### Step 2: Configuring Apostrophe with `app.js` 
 
-`app.js` is Apostrophe's main configuration file. This is the file that fires up Apostrophe with a given configuration, and is where you can specify what modules you want to be present in your project. As you add them, you also configure them by providing options via an object.
+In order for a new page template to load, you must add it to `app.js`. When you add a new page template to `app.js`, remember, you're not creating a new page: you're registering a page template that can be used to create new pages.
 
-Some modules are always a part of Apostrophe whether you configure them or not, and you can create your own modules to meet the needs of your project. To learn more abuou modules, visit the [Modules section](/tutorials/core-concepts/modules/README.md).
+### Step 3: Creating a Page
 
-In order for any new page template to load, you must add it to `app.js`. When you add a new page template to `app.js`, remember, you're not creating a new page: you're registering a page template that can be used to create new pages.
+Finally, once you have created a page template, and registered it in `app.js` you can create new pages based on it. To do this, you'll need to step away from your text editor and command line for a moment and use Apostrophe's administrative interface to create new pages.
 
-## Example: Creating a New Page Template 
+## Example: Creating a New Page Template and Page 
 
-Now let's apply all of this to create a new page template in `default.html`.
+Now create a new page template named `default.html` that extends `layout.html`, register the template, and use it to create a new page.
 
 ### Create the Template
 
@@ -91,10 +106,6 @@ First create the page template:
     In this example, we only created a main block, since often you'll want to use content inherited from the main template in `beforeMain` and `afterMain`. The main block would be filled with various widgets used to display and create content. But let's not get ahead of ourselves.
 
 Now that you have a `default.html` file, you need to register it in `app.js` to make it available.
-
-{% hint style='info' %}
-Even `layout.html` extends another file. For a typical page load, it extends `outerLayout.html`, which lives in the `lib/modules/apostrophe-templates/views` folder. That file extends the `outerLayoutBase.html` file that ships with Apostrophe. Most of the time you won't need to look there, but it does contain additional blocks you can override, notably `extraHead` which is perfect for adding `link` elements to the `head` element and so on.
-{% endhint %}
  
 ### Add the Page Template to `app.js`
 
@@ -124,13 +135,11 @@ Even `layout.html` extends another file. For a typical page load, it extends `ou
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Remember, all you're doing here is registering a template. New pages are created in context on your Apostrophe instance.
-
 ### Create a Page from the New Template
 
 Now that you created the template, use it to create a new page.
 
-1. Log on to Apostrophe.
+1. Log in to Apostrophe.
 
 2. Open the main menu and select *Pages*.
 
@@ -141,5 +150,4 @@ Now that you created the template, use it to create a new page.
 ![Creating a new page](/.gitbook/assets/create_new_page2.png)
 
 
-Nice work! You created a new page template, and now you can create as many pages as you like from that template. Next we'll talk about using Widgets, Singletons, and Areas to add content to your page.
-
+Nice work! You created a new page template, and now you can create as many pages as you like from that template. 
