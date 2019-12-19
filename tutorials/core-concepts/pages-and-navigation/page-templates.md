@@ -109,7 +109,7 @@ Now that you have a `default.html` file, you need to register it in `app.js` to 
  
 ### Add the Page Template to `app.js`
 
-1. Open `app.js` in your favorite text editor.
+1. Open `app.js`.
 
 2. Add the registration for your new page template to `app.js`:
 
