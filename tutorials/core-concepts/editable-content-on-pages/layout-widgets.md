@@ -3,17 +3,15 @@ title: Layout (nested) widgets
 layout: tutorial
 ---
 
-# Layout / Nested widgets
+# Layout Widgets
 
-You’ve built a couple of custom widgets, you’ve got a powerful `area` running down the main column of your template. Awesome! Now you want start pairing widgets up, creating complex layouts of widgets. `singletons` let you enforce particular widgets in particular pieces of layout, but you want the editor to decide where it's appropriate to create these complex arrangements and be able to mix them with simpler widgets.
-
-You want a widget that creates a layout of inner widgets.
+In the previous section you built a couple of custom widgets and created an "accordion" to manage an `area` in your template. Now lets create a widget that allows us to create complex layouts of widgets within widgets. In addition to providing new functionality, but doing this within a widget, we'll be able to provide editors with additional controls that were previously only available in the code.
 
 ## Create a layout widget
 
-Generally, you need a dedicated widget to create layout. The Apostrophe team sometimes refers to these as ‘layout widgets’ that give form and structure to ‘content widgets’ \(widgets whose sole job is to display content\). **In this example we'll make a simple two column layout.**
+In this example we'll make a widget which provides a simple two column layout
 
-1. Use the [`apostrophe-cli`](https://github.com/punkave/apostrophe-cli) to quickly build a widget.
+1. Use the [`apostrophe-cli`](https://github.com/punkave/apostrophe-cli) to quickly build a widget:
 
     ```bash
     apostrophe create-widget two-column
@@ -28,7 +26,7 @@ Generally, you need a dedicated widget to create layout. The Apostrophe team som
       }
     ```
 
-3. Define what can be in a `two-column` widget by defining it in `lib/modules/two-column-widgets/index.js`:
+3. Define what widgets can be in a `two-column` widget by defining it in `lib/modules/two-column-widgets/index.js`:
 
 
 {% code-tabs %}
@@ -40,14 +38,14 @@ Generally, you need a dedicated widget to create layout. The Apostrophe team som
       contextualOnly: true,
       addFields: [
         {
-          name: 'areaLeft',
+          name: 'columnLeft',
           type: 'area',
-          label: 'Left Area',
+          label: 'Left Column',
         },
         {
-          name: 'areaRight',
+          name: 'columnRight',
           type: 'area',
-          label: 'Right Area',
+          label: 'Right Column',
         }
       ]
     };
@@ -63,7 +61,7 @@ Generally, you need a dedicated widget to create layout. The Apostrophe team som
 
 **skipInitialModal: true** An alternative to `contextualOnly`, `skipInitialModal` lets you skip the widget manager modal when the widget is created \(like `contextualOnly`\) but preserves the Edit UI for later use. This is useful for widgets that have secondary configuration, like setting a background color.
 
-## Putting it in the page
+## Putting it on the page
 
 Now, like any other widget, you need to have a `widget.html` template. In this case we'll use that template to call `apos.area` once for each area and introduce nested widgets.
 

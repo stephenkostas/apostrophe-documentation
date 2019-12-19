@@ -1,5 +1,5 @@
 ---
-title: "Editable Content on Pages with Widgets"
+title: "Widgets: Editable Content on the Page"
 layout: reference
 children:
   - custom-widgets
@@ -9,9 +9,9 @@ children:
   - other-content-tools
 ---
 
-In Pages and Navigation, you learned about [singletons, areas, and some of Apostrophe's built in widget](../pages-and-navigation/widgets-singletons-and-areas). Now you'll learn how to create your own custom widgets to expand Apostrophe's capabilities and meet your project's needs.
+Pages and Navigation covered some of the basics about using [singletons, areas, and some of Apostrophe's built in widgets](../pages-and-navigation/widgets-singletons-and-areas). Now you'll learn how to create your own custom widgets to expand Apostrophe's capabilities and meet your project's needs.
 
-* [Custom Widgets Part 1: Creating a Basic Widget](tutorials/core-concepts/editable-content-on-pages/custom-widgets.md)
-* [Custom Widgets Part 2: Using Joins and Adding User Choice](tutorials/core-concepts/editable-content-on-pages/custom-widgets-2.md)
-* [Custom Widgets Part 3: Enhancing Widgets with Browser-side Code](tutorials/core-concepts/editable-content-on-pages/custom-widgets-3.md)
+* [Creating a Basic Widget](tutorials/core-concepts/editable-content-on-pages/custom-widgets.md)
+* [Using Joins and Adding User Choice](tutorials/core-concepts/editable-content-on-pages/custom-widgets-2.md)
+* [Enhancing Widgets with Browser-side Code](tutorials/core-concepts/editable-content-on-pages/custom-widgets-3.md)
 * [Layout / Nested widgets](tutorials/core-concepts/editable-content-on-pages/layout-widgets.md)

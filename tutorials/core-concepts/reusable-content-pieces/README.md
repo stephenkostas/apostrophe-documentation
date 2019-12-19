@@ -8,7 +8,7 @@ children:
   - joins
 ---
 
-Pieces are a powerful tool provided by Apostrophe. You can use them to create dynamic content or content based web applications. Many of Apostrophe's most powerful content management features are based around pieces, so read on to learn more.
+There are a number of ways to build content in Apostrophe. Maybe you can get what you need using the Rich Text and Images widgets, but you probably need more power and flexibility to create dynamic reusable structured content. Pieces are how you do this in Apostrophe. You can use them to different types of content specific to your needs or even simple content based web applications.
 
 * [Reusable content with pieces](/tutorials/core-concepts/reusable-content-pieces/reusable-content-with-pieces.md)
 * [Displaying Pieces With Widgets](/tutorials/core-concepts/reusable-content-pieces/displaying-pieces-with-widgets.md)

@@ -1,44 +1,48 @@
 ---
-title: Custom Widgets Part 1 Creating a Basic Widget
+title: Creating a Basic Widget
 layout: tutorial
 ---
 
-# Custom Widgets Part 1: Creating a Basic Widget
+# Creating a Basic Widget
 
-You've seen a lot of the widgets that come "in the box" with Apostrophe. But you can do much more by creating your own.
+Apostrophe comes with many widgets out of the box, but you can do much more by creating your own.
 
-Here's a common case: you want to build your own navigation menu. [Apostrophe's page tree is awesome](/tutorials/core-concepts/pages-and-navigation/connecting-pages.md) but sometimes you want to "cherrypick" pages from all over the tree, perhaps for a special footer.
+Here's a common case: you want to build your own sitemap. We'll create custom widgets to accomplish this. You'll start with a simple widget that adds a link, and then enhance it so that it adds links programmatically in the next section.
 
-Let's create a custom widgets to help provide navigation. you'll start with a simple widget that adds a link in a well-formatted way, and then enhance it so that it adds links programmatically in the next section.
+## Creating a Modules
 
-## Creating Modules
+Just about everything new you create in Apostrophe will be a "module." Project-specific modules live in `lib/modules`.
 
-Just about everything new you create in Apostrophe will be a "module." Project-specific modules live in `lib/modules`. Apostrophe will spot them there if you list them in `app.js`. You can also publish and install modules with `npm`. Apostrophe looks in both places. Your module name **should not start with** `apostrophe`. That's reserved for our official modules. Modules almost always have plural names. The name of a module that provides widgets should end in `-widgets`.
+FOLDER TREE
 
-The basic steps for creating any widget go like this:
+{% hint style='warning' %}
+Your module name **should not start with** `apostrophe`. That's reserved for our official modules. Modules almost always have plural names. The name of a module that provides widgets should end in `-widgets`.
+{% endhint %}
 
-* Create a folder for the module.
+There are five basic steps for creating any widget:
 
-* Register the widget in `app.js`.
+1. Create a folder for the module.
 
-* Create an `index.js` for the widget.
+2. Register the widget in `app.js`.
 
-* Create the `view` folder and create the display template for the widget.
+3. Create an `index.js` for the widget.
 
-* Add the widget to a template to be displayed.
+4. Create the `view` folder and create the display template for the widget.
+
+5. Add the widget to a template to be displayed.
 
 
 ## Example: `link`, the simplest widget
 
 For you first widget, we'll start simple. First, create the folder, `index.js` and register the widget.
 
-1\. In the terminal, from the project root, enter:
+1\. In the terminal, from the project root, enter to create the module folder:
 
 ```bash
 mkdir -p lib/modules/link-widgets
 ```
 
-2\. Then include the module in `app.js` by adding the following to the `modules` object:
+2\. Then register the module in `app.js` by adding the following to the `modules` object:
 
 
 {% code-tabs %}
@@ -90,15 +94,8 @@ _"What other field types can I add?"_ The `apostrophe-schemas` module provides a
 _"What does the_ `name` _property do?"_ Each field needs to be stored in the widget under its own property name. Play around with `aposDocs.find().pretty()` in the mongodb shell to see what it looks like after you save the widget.
 {% endhint %}
 
-Next you'll need the `views` folder and your widget's `widget.html` template, which renders it on the page.
 
-1. Create a new folder:
-
-    ```bash
-    mkdir -p lib/modules/link-widgets/views
-    ```
-
-2. Now create a Nunjucks template in `lib/modules/link-widgets/views/widget.html`:
+4\. Create the `lib/modules/link-widgets/views/` folder, and `widget.html` inside of it:
 
 {% code-tabs %}
 {% code-tabs-item title="lib/modules/link-widgets/views/widget.html" %}
@@ -112,9 +109,7 @@ Next you'll need the `views` folder and your widget's `widget.html` template, wh
 _"Hey, don't You need to escape the label before you output it as HTML?"_ No, Nunjucks does it automatically. If you need to output content that is already valid, safe markup, you must use the `| safe` filter to output it without escaping.
 {% endhint %}
 
-Finally you'll want to add this widget to an area in one of our page templates, like you learned in [widgets, areas, and singletons](/tutorials/core-concepts/pages-and-navigation/widgets-singletons-and-areas.md).
-
-Add the following to the `main` block of our `lib/modules/apostrophe-pages/views/pages/home.html`:
+5\. Add the following to the `main` block of our `lib/modules/apostrophe-pages/views/pages/home.html` to render the widget:
 
 {% code-tabs %}
 {% code-tabs-item title="lib/modules/apostrophe-pages/views/pages/home.html" %}
