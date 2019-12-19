@@ -1,6 +1,6 @@
 # Tags
 
-Tags are a common CMS feature which are used to fluidly connect content. In Apostrophe, tags can applied to all content types and connect them across your site. Many of the widgets bundled with Apostrophe support creating content with tags, and you can also [use tags when you create your own widgets](/other/fields/tags.md).
+Tags are a common CMS feature which are used to fluidly connect content. Tags connect different content and content content types across your site. Many of the widgets bundled with Apostrophe support creating content with tags, and you can also [use tags when you create your own widgets](/other/fields/tags.md).
 
 ## Creating Tags
 
@@ -17,7 +17,7 @@ To add a tag through the admin bar,
 
 ## Managing Tags
 
-All tags can be managed from the Manage Tags page, whether they were created by a regular user or by an administrator. Deleting a tag will remove it from any associated content.
+All tags can be managed from the Manage Tags interface, whether they were created by an administrator or another user with the correct permissions. Deleting a tag will remove it from any associated content.
 
 * Click the pencil icon to edit an existing tag.
 
