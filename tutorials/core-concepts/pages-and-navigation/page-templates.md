@@ -15,7 +15,7 @@ There are three main steps for creating a new page:
 
 3. Add the page through the ApostropheCMS user interface.
 
-To create new pages and page templates, you'll use the `apostrophe-pages` and `apostrophe-templates` modules. You'll also learn the basics of using [Nunjucks](https://mozilla.github.io/nunjucks/) to provide more dynamic features.
+To create new pages and page templates, you'll use the `apostrophe-pages` and `apostrophe-templates` modules. You'll also learn the basics of using [Nunjucks](https://mozilla.github.io/nunjucks/).
 
 ## Page Creation Overview
 
@@ -65,7 +65,7 @@ The `layout.html` template provides the unpinning for all of our templates. Befo
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-As a rule, you should extend the `layout.html` or create your own base templates using a similar pattern. For our example, we'll start with the `blocks` defined in `layout.html` and override them in a separate templates.
+As a rule, you should extend the `layout.html` or create your own base templates using a similar pattern. This provides us with several **blocks** to use. Blocks define the layout areas of the page so that we can easily define where everything should render. For our example, we'll start with the `blocks` defined in `layout.html` and override them in a separate templates.
 
 {% hint style='info' %}
 While `layout.html` is the template that you'll extend, there's a long line of templates being extended under the hood. For a typical page load, `layout.html` extends `outerLayout.html` (from `lib/modules/apostrophe-templates/views`). Then `outLayout.html` extends `outerLayoutBase.html`. Most of the time you won't need to look there, but there are cases, like adding a `link` to the `head`, where you might need to override a block from one of the base templates that isn't found in `layout.html`.
