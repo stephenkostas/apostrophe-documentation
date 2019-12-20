@@ -145,7 +145,7 @@ Here is an example Rich Text widget singleton configured to provide bold and ita
           toolbar: [ 'Bold', 'Italic' ],
           addLabel: 'Add a description.'
         }) }}
-    ```
+```
 
 
 ### Example: Rich Text and Images Widget Area with Repositioned Controls
