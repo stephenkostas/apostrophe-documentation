@@ -62,13 +62,20 @@ Here is an example with the popular options:
 
 `size` controls the size of the image that gets displayed. To conserve bandwidth Apostrophe never sends the original image by default. Apostrophe resizes your image to the following sizes by default, always preserving the aspect ratio:
 
-* `max`: no larger than 1600x1600.
-* `full`: no larger than 1140x1140.
-* `two-thirds`: no larger than 760x760.
-* `one-half`: no larger than 570x700.
-* `one-third`: no larger than 380x700.
-* `one-sixth`: no larger than 190x350.
-* `original`: the original file \(WARNING: educate your users about the downsides of sending huge files to browsers over 3G\).
+`max`
+: no larger than 1600x1600.
+`full`
+: no larger than 1140x1140.
+`two-thirds`
+: no larger than 760x760.
+`one-half`
+: no larger than 570x700.
+`one-third`
+: no larger than 380x700.
+`one-sixth`
+: no larger than 190x350.
+`original`
+: the original file \(WARNING: educate your users about the downsides of sending huge files to browsers over 3G\).
 
 If you don't specify a size, the `full` size is displayed.
 
@@ -117,11 +124,16 @@ It doesn't take any options.
 
 Areas and singletons both have a number of options for configuring their controls. Sometimes you'd like to change the edit button, sometimes you'd like to disallow removing a singleton entirely and so on.
 
-* `options.addLabel` provides text for the initial add button.
-* `options.editLabel` provides text for an edit button.
-* `options.controls.movable` is true by default, but can be set to false, to prevent a from being dragged out of the singleton.
-* `options.controls.removable` can be set to "true" or "false" to determine whether the button to remove a widget is available
-* `options.controls.position` can be set to `top-left`, `top-right`, `bottom-left` or `bottom-right`, to reposition the widget controls \(edit, drag and remove\) are positioned accordingly. This can be helpful if the default location \(`top-left`\) doesn't play well with your widget's design.
+`options.addLabel`
+: provides text for the initial add button.
+`options.editLabel`
+: provides text for an edit button.
+`options.controls.movable`
+: is true by default, but can be set to false, to prevent a from being dragged out of the singleton.
+`options.controls.removable`
+: can be set to "true" or "false" to determine whether the button to remove a widget is available
+`options.controls.position`
+: can be set to `top-left`, `top-right`, `bottom-left` or `bottom-right`, to reposition the widget controls \(edit, drag and remove\) are positioned accordingly. This can be helpful if the default location \(`top-left`\) doesn't play well with your widget's design.
 
 ### Example: Rich Text Widget Singleton with Label
 
