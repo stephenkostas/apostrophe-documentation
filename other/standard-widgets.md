@@ -11,11 +11,13 @@ In this section you can find a quick reference with configuration options for so
 
 The rich text widget provides a space for to enter text, with various options for formatting that text in a WYSIWYG editor based on CKEditor.
 
+### Example
+
 ```markup
         {{ apos.singleton(data.page, 'textBlock', 'apostrophe-rich-text', {
           toolbar: [ 'Bold', 'Italic' ]
         }) }}
-    ```
+```
 
 ### `'textBlock'`
 
@@ -35,7 +37,7 @@ The name of the area. This denotes what property the singleton will be saved to 
 
 The `apostrophe-images` widget lets you add one or more images. If multiple images are added in a single widget, they are presented as a slideshow.
 
-Here is an example with the popular options:
+### Example
 
 ```markup
   {{ apos.singleton(data.page, 'heroPic', 'apostrophe-images', {
@@ -85,8 +87,7 @@ You'll talk about adding custom image sizes in [`apostrophe-attachments`](/modul
 
 The `apostrophe-files` widget lets you add download links to access various documents, such as PDFs or Word files. If multiple files are added in a single widget, they are presented as a list.
 
-Add this below the `apos.area` to add a simple `apostrophe-files` widget to the page:
-
+### Example
 
 {% code-tabs %}
 {% code-tabs-item title="lib/modules/apostrophe-pages/views/home.html" %}
