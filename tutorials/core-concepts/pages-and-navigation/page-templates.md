@@ -17,6 +17,25 @@ There are three main steps for creating a new page:
 
 To create new pages and page templates, you'll use the `apostrophe-pages` and `apostrophe-templates` modules. You'll also learn the basics of using [Nunjucks](https://mozilla.github.io/nunjucks/).
 
+
++-- _config.yml
++-- _drafts
+|   +-- begin-with-the-crazy-ideas.textile
+|   +-- on-simplicity-in-technology.markdown
++-- _includes
+|   +-- footer.html
+|   +-- header.html
++-- _layouts
+|   +-- default.html
+|   +-- post.html
++-- _posts
+|   +-- 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   +-- 2009-04-26-barcamp-boston-4-roundup.textile
++-- _data
+|   +-- members.yml
++-- _site
++-- index.html
+
 ## Page Creation Overview
 
 Before we go through an example where you create your own page templates and pages, let's look in more detail at the concepts behind each step of the process.

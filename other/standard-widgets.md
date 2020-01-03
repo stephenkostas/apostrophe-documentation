@@ -18,18 +18,19 @@ The rich text widget provides a space for to enter text, with various options fo
           toolbar: [ 'Bold', 'Italic' ]
         }) }}
 ```
+### Options 
 
-### `'textBlock'`
+#### `'textBlock'`
 
 The name of the area. This denotes what property the singleton will be saved to in the page object. In this case, it would be saved to `data.page['textBlock']`.
 
-### `toolbar`
+#### `toolbar`
 
 `toolbar` determines which controls appear in the editor's toolbar. Here are the frequently used controls:
 
 `Styles`, `Bold`, `Italic`, `Link`, `Unlink`, `Anchor`, `Table`, `BulletedList`, `Blockquote`, `Strike`, `Subscript`, `Superscript`, `Split`
 
-### `styles`
+#### `styles`
 
 `styles` specifies an array of valid CKEditor styles, which will appear on the "Style" dropdown menu if it is included in the `toolbar`. Each style has a `name` property and an `element` property. Most semantic HTML5 elements are allowed here.
 
@@ -48,19 +49,21 @@ The `apostrophe-images` widget lets you add one or more images. If multiple imag
   }) }}
 ```
 
-### `minSize`
+###Options 
+
+#### `minSize`
 
 `minSize` ensures the user can't pick images smaller than the given dimensions `[ width, height ]`.
 
-### `aspectRatio`
+#### `aspectRatio`
 
 `aspectRatio` will crop the images to display the largest portion that has the given aspect ratio `[ x, y ]`, throwing away some of the image if necessary. If the user clicks the cropping button while picking the image, the cropping controls will also enforce the aspect ratio.
 
-### `limit`
+#### `limit`
 
 `limit` prevents the user from selecting more than the given number of images. A `limit` of `1` is appropriate where you don't want a slideshow treatment.
 
-### `size`
+#### `size`
 
 `size` controls the size of the image that gets displayed. To conserve bandwidth Apostrophe never sends the original image by default. Apostrophe resizes your image to the following sizes by default, always preserving the aspect ratio:
 
@@ -99,7 +102,9 @@ The `apostrophe-files` widget lets you add download links to access various docu
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-### `limit`
+### Options
+
+#### `limit`
 
 `limit` prevents the user from selecting more than the given number of files.
 

@@ -7,6 +7,10 @@ layout: tutorial
 
 When you create content with the rich text editor, or images widget, that content is only displayable on the page where it is created. That will work for some cases, but often you need more powerful tools to create different types of content that can be reused in different ways across your site.
 
+## What is a "piece"?
+
+
+
 ## A directory of people: working with pieces
 
 Let's say you want to create a directory of people who work for a company. People are "global content": they are useful to display here and there all over the site, they aren't tied down to one page. The `apostrophe-pieces` module provides a great starting point to create many types of global content. You'll extend it to make your own `people` module. You can extend `apostrophe-pieces` many times in the same project.

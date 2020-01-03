@@ -12,7 +12,7 @@ In Apostrophe, **Attachments** are any file that you upload into the CMS to use 
 
 ## Uploading Attachments
 
-Attachments are uploaded in two ways: through the [Files Widget](/modules/apostrophe-files) included with Apostrophe or through the [`attachments`](/other/fields/attachments.md) field in a custom schema. The Files widget can be accessed by adding it to a page, or through the admin bar.
+Attachments are uploaded in two ways: through the [Files Widget](/other/standard-widgets.md#apostrophe-files) included with Apostrophe or through the [`attachments`](/other/fields/attachments.md) field in a custom schema. The Files widget can be accessed by adding it to a page, or through the admin bar.
 
 To learn more about using the `apostrophe-files` you can [its section in the standard widgets documentation](/tutorials/core-concepts/editable-content-on-pages/standard-widgets.md#apostrophe-files).
 
